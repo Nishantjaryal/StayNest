@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review.js");
+const { string } = require("joi");
 
 const listingSchema = new Schema({
   title: {
@@ -9,14 +10,8 @@ const listingSchema = new Schema({
   },
   description: String,
   image: {
-    url: {
-      type: String,
-      default: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    },
-    filename: {
-      type: String,
-      default: "defaultimage",
-    },
+    url: String,
+    filename: String
   },
   price: Number,
   location: String,
